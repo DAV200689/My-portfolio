@@ -1,0 +1,450 @@
+/* style-alt.css - Dark Aesthetic Portfolio with Blue Accents */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==================== GLOBAL RESET & BASE ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    font-family: 'Inter', 'Poppins', sans-serif;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+/* ==================== TYPOGRAPHY ==================== */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #e0e0e0;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+.highlight, span.fw-medium {
+    color: #3b82f6;
+    font-weight: 700;
+}
+
+.text-secondary {
+    color: #a0a0a0 !important;
+}
+
+/* ==================== NAVIGATION (Transparent/Dark Matte) ==================== */
+.navbar {
+    background-color: rgba(10, 10, 10, 0.95) !important;
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+}
+
+.navbar-brand {
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #3b82f6 !important;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: #e0e0e0 !important;
+    font-weight: 500;
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #3b82f6 !important;
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 2px;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 80%;
+}
+
+.navbar-toggler {
+    border-color: #3b82f6;
+    background-color: transparent;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%233b82f6' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ==================== HOME SECTION (HERO) ==================== */
+.section {
+    padding: 80px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+#home {
+    padding-top: 100px;
+}
+
+/* Profile Image - Circular with Blue Glow */
+.home-image img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border: 3px solid #3b82f6;
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.3), 0 0 15px rgba(59, 130, 246, 0.2);
+    transition: all 0.4s ease;
+}
+
+.home-image img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 45px rgba(59, 130, 246, 0.5);
+}
+
+@media (max-width: 768px) {
+    .home-image img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 30px;
+    }
+    
+    .home-content {
+        text-align: center;
+    }
+}
+
+/* Typing Effect Cursor */
+.typing {
+    color: #3b82f6;
+    border-right: 3px solid #3b82f6;
+    animation: blink 0.7s step-end infinite;
+    padding-right: 5px;
+}
+
+@keyframes blink {
+    0%, 100% { border-color: #3b82f6; }
+    50% { border-color: transparent; }
+}
+
+/* Social Icons - Circular with Border */
+.social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid rgba(59, 130, 246, 0.5);
+    color: #e0e0e0;
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    margin-right: 12px;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    border-color: #3b82f6;
+    color: #3b82f6;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.2);
+}
+
+/* Outline CV Button */
+.BTN {
+    background-color: transparent !important;
+    border: 2px solid #3b82f6 !important;
+    color: #3b82f6 !important;
+    font-weight: 600;
+    padding: 12px 32px !important;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.BTN:hover {
+    background-color: #3b82f6 !important;
+    color: #0a0a0a !important;
+    border-color: #3b82f6 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(59, 130, 246, 0.3);
+}
+
+/* ==================== PROGRESS BARS ==================== */
+.progress {
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    height: 8px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    background-color: #3b82f6;
+    border-radius: 10px;
+    position: relative;
+    animation: slideProgress 1s ease-out;
+}
+
+@keyframes slideProgress {
+    from {
+        width: 0%;
+    }
+    to {
+        width: var(--progress-width);
+    }
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    color: #e0e0e0;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: #3b82f6;
+}
+
+.text-center .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Card Styles for About/Skills/Projects */
+.card {
+    background-color: #111111;
+    border: 1px solid #222;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    color: #e0e0e0;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #3b82f6;
+    box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+}
+
+.card-title {
+    color: #3b82f6;
+    font-weight: 700;
+}
+
+/* Skills Section Specific */
+.skill-item {
+    margin-bottom: 1.5rem;
+}
+
+.skill-item p {
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+/* ==================== PROJECTS SECTION ==================== */
+.project-card {
+    background: linear-gradient(135deg, #111111 0%, #0d0d0d 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    border: 1px solid #222;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: #3b82f6;
+    box-shadow: 0 15px 35px rgba(59, 130, 246, 0.15);
+}
+
+.project-img {
+    overflow: hidden;
+}
+
+.project-img img {
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.05);
+}
+
+.project-title {
+    color: #3b82f6;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.project-tech {
+    color: #a0a0a0;
+    font-size: 0.85rem;
+}
+
+/* ==================== CONTACT SECTION ==================== */
+.form-control {
+    background-color: #111111;
+    border: 1px solid #222;
+    color: #e0e0e0;
+    padding: 12px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: #111111;
+    border-color: #3b82f6;
+    color: #e0e0e0;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #666;
+}
+
+.form-label {
+    color: #3b82f6;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    background-color: #050505;
+    padding: 30px 0;
+    border-top: 1px solid rgba(59, 130, 246, 0.2);
+    margin-top: 60px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    color: #888;
+}
+
+/* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 0;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 35px;
+    }
+    
+    .row {
+        text-align: center;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    .btn-lg {
+        margin-bottom: 20px;
+    }
+    
+    .progress {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 992px) and (min-width: 769px) {
+    .home-image img {
+        width: 220px;
+        height: 220px;
+    }
+}
+
+/* ==================== SCROLLBAR STYLING ==================== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3b82f6;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+.text-blue {
+    color: #3b82f6 !important;
+}
+
+.border-blue {
+    border-color: #3b82f6 !important;
+}
+
+.bg-blue {
+    background-color: #3b82f6 !important;
+}
+
+.glow-effect {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.hover-lift {
+    transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+}
+
+/* Animation for typing effect - to be triggered by JS */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* Smooth scroll offset for fixed navbar */
+html {
+    scroll-padding-top: 80px;
+}
